@@ -1,0 +1,39 @@
+<!-- app.component.html -->
+<body>
+<div class="container">
+  <div>
+    <h2>{{ title }}</h2>
+  </div>
+
+  <div>
+    <input [(ngModel)]="playerId" placeholder="Ingrese ID del jugador" id= "playerId" />
+    <button (click)="searchPlayer()">Buscar</button>
+  </div>
+
+   <main>
+    <div class="player-chart-container">
+      <div *ngIf="player" class="player-details">
+        <h2>{{ player?.long_name }}</h2>
+          <div>
+            <h3>Detalles del Jugador</h3>
+            <p><strong>Nombre:</strong> {{ player.long_name }}</p>
+            <p><strong>Posición:</strong> {{ player.player_positions }}</p>
+            <p><strong>Habilidad en Tiro:</strong> {{ player.shooting }}</p>
+            <p><strong>Habilidad en Pase:</strong> {{ player.passing }}</p>
+            <p><strong>Habilidad en Regate:</strong> {{ player.dribbling }}</p>
+            <p><strong>Habilidad en Potencial:</strong> {{ player.potential }}</p>
+            <p><strong>Valor overall:</strong> {{ player.overall }}</p>
+          </div>
+      </div>
+    <div *ngIf="errorMessage">
+      <p>{{ errorMessage }}</p>
+    </div>
+    <div class="chart-container">
+          <canvas  id="MyChart" >{{ chart }}</canvas>
+    </div>
+  </div>
+</main>
+</div>
+</body>
+
+

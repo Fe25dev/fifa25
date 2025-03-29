@@ -1,0 +1,18 @@
+<!-- navbar.component.html -->
+<!-- <nav class="navbar">
+  <ul>
+    <li><a routerLink="/dashboard">Dashboard</a></li>
+    <li><a routerLink="/users">Users</a></li>
+    <li><a routerLink="/settings">Settings</a></li>
+  </ul>
+</nav>
+ -->
+<nav class="navbar">
+  <ul>
+    <li><a href="#" (click)="navigateTo('login', $event)">Login</a></li>
+    <li><a href="#" (click)="navigateTo('dashboard', $event)">Dashboard</a></li>
+    <li><a href="#" (click)="navigateTo('users', $event)">Users</a></li>
+    <li><a href="#" (click)="navigateTo('settings', $event)">Settings</a></li>
+    <li><a href="#" (click)="navigateTo('reports', $event)">Reports</a></li>
+  </ul>
+</nav>
