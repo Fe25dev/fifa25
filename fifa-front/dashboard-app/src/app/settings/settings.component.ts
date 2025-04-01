@@ -1,4 +1,3 @@
-// players.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -13,14 +12,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.css']
 })
-//export class SettingsComponent {
-export class SettingsComponent implements OnInit {
 
+export class SettingsComponent implements OnInit {
 
   playerId: string = '';  // Almacena el ID ingresado por el usuario
   player: any = null;  // Almacena los datos del jugador
   errorMessage: string = '';  
-
   playerData: any = {
     name: '',
     position: '',
@@ -38,7 +35,6 @@ export class SettingsComponent implements OnInit {
 
   ngOnInit(): void {
     this.playerId = this.route.snapshot.paramMap.get('id')!;
-    this.loadPlayerData();
   }
 
   loadPlayerData(): void {
@@ -57,7 +53,7 @@ export class SettingsComponent implements OnInit {
       }
     );
   }
-    searchPlayer() {
+  searchPlayer() {
     if (this.playerId) {
       this.apiService.getPlayer(this.playerId).subscribe(
         (data: any) => {
@@ -65,8 +61,6 @@ export class SettingsComponent implements OnInit {
             this.player = data;
             this.errorMessage = '';
             console.log('Datos obtenidos:', data);
-
-                // Asignamos los datos encontrados a playerData para los inputs
             this.playerData = {
               name: this.player.long_name,
               position: this.player.player_positions,
@@ -91,7 +85,4 @@ export class SettingsComponent implements OnInit {
       this.errorMessage = 'Por favor ingrese un ID de jugador';
     }
   }
-
-
-
 }

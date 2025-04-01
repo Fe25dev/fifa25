@@ -4,7 +4,7 @@ import { ApiService } from '../services/api.service';
 import { RouterOutlet } from '@angular/router';
 
 import { RouterModule } from '@angular/router';
-import { DashboardRoutingModule } from './dashboard-routing.module';  
+//import { DashboardRoutingModule } from './dashboard-routing.module';  
 
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
@@ -19,7 +19,7 @@ import { Chart } from 'chart.js/auto';
 
 @Component({
   selector: 'app-dashboard',
-  standalone: true,
+  //standalone: true,
   imports: [FormsModule,CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'

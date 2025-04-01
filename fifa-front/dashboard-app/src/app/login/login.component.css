@@ -2,60 +2,80 @@
 /* Estilo global: Body y fondo general */
 body {
   font-family: 'Arial', sans-serif;
-  margin: 50px;
-  padding: 50px;
-  background-color: #fff6ff;  /* Color de fondo suave */
+  margin: 20px;
+  
+  padding: 90px;
+  height: 100%;
+  background-color: #d6eaf8;
   color: #333;  /* Color del texto */
-
+  display: flex;
+  justify-content: center;   /* Centra el contenido horizontalmente */
+  align-items: center;  
+ 
 }
 
 h1 {
   color: #007bff;  /* Azul */
   font-size: 2.5rem;
   margin-bottom: 20px;
+
 }
 
 h2 {
   color: #00799f;  /* Azul */
   font-size: 1.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
+
 }
 
 
 
 /* Estilo para el contenedor de las secciones */
-.contenedor {
+
+.conteiner {
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* Asegura que las secciones estén separadas */
+  justify-content: center;   
   align-items: center;   
-  gap: 20px;   /* Espacio entre las secciones */
-  flex-wrap: wrap;   /* Permite que las secciones se envuelvan si no caben en una fila */
+  border-radius: 10px;        /* Bordes redondeados */
+  border: 3px solid #007bff;  /* Borde azul de 3px */
+  padding: 30px;              /* Espacio dentro del contenedor */
+  gap: 20px;                  /* Espacio entre los elementos internos */
+  flex-wrap: wrap;            /* Permite que las secciones se envuelvan si no caben en una fila */
+  background-color: white;    /* Fondo blanco */
+  max-width: 600px;           /* Limita el tamaño máximo del formulario */
+  margin: 40px auto ;          /* Aumenta el margen de la sección y lo centra automáticamente */
 }
 
-
+.image-container img {
+  width: 400px;               /* Define un tamaño adecuado para la imagen */
+  height: auto;               /* Mantiene la proporción de la imagen */
+  border-radius: 20px;
+  margin: 20px;
+  padding: 40px;      
+}
 /* seccion players ----------------------------------------------------------------------------*/
 
 .form-group {
   display: flex;               /* Usa Flexbox para los elementos hijos */
-  margin: 40px;
-  padding: 40px;
   flex-direction: column;
   flex-wrap: wrap;             /* Permite que los elementos se ajusten a la siguiente fila si no hay suficiente espacio */
   gap: 10px;                   /* Espacio entre los elementos */
+  width: 100%;   
+
 }
 
 
 .form-group label {
   width: 90px;                /* Ancho fijo para las etiquetas */
   margin-right: 15px;          /* Espacio a la derecha de la etiqueta */
-  display: inline-block;
+
 }
 
 .form-group input {
   flex: 0 0 80%;                /* Los inputs ocupan el 80% del espacio disponible */
   margin-bottom: 10px;          /* Espacio debajo de los inputs */
-  height: 20;
+  padding: 25px;
 }
 
 button {
@@ -82,13 +102,24 @@ button:hover {
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
-  .contenedor {
+  body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+  background-color: #d6eaf8;
+  color: #333;  /* Color del texto */
+  display: flex;
+  justify-content: center;   /* Centra el contenido horizontalmente */
+  align-items: center;  
+ 
+}
+  .conteiner {
+    display: flex;
     flex-direction: column; /* Las secciones se apilan verticalmente */
     gap: 10px; /* Menos espacio entre las secciones */
   }
-  .player-container, .updatePlayer {
-    flex: 1 1 100%; /* Las secciones ocupan todo el ancho */
-  }
+
 }
 
 

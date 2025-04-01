@@ -10,9 +10,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { ApiService } from './services/api.service'; 
 import { AuthService } from './services/api.service'; 
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
 
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';  // Importa el HttpClientModule
+import { HttpClientModule } from '@angular/common/http';  
 import { provideHttpClient } from '@angular/common/http';
 
 
@@ -29,7 +30,7 @@ import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 import { routes } from './app.routes';  
 
 @NgModule({
-  declarations: [AppComponent,NavbarComponent],
+  declarations: [AppComponent,NavbarComponent,LoginComponent],
   imports: [
     CommonModule,
     FormsModule, 

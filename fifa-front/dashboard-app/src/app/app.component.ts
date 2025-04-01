@@ -5,28 +5,49 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
 
 import { routes } from './app.routes'; 
+import { provideRouter,Routes } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { ChartOptions, ChartType, ChartDataset } from 'chart.js';  
 import { ChartData, ChartConfiguration } from 'chart.js'; 
 
 import { Chart } from 'chart.js/auto';
-// import { AppRoutingModule } from './app-routing.module'; 
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule,CommonModule,NavbarComponent],
+  imports: [RouterOutlet, FormsModule,CommonModule,NavbarComponent,LoginComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  {
-
   title = 'Page-principal';
-  playerId: string = '';  // Almacena el ID ingresado por el usuario
-  player: any = null;  // Almacena los datos del jugador
-  errorMessage: string = '';  // Mensaje de error en caso de que no se encuentre el jugador
+  isAuthenticated: boolean = false; 
+  constructor(
+    private authService: AuthService, 
+    private router: Router
+  ) {}
 
-  public chart: any;
- 
+  ngOnInit(): void {
+    // Verificamos el estado de autenticación al iniciar
+    this.authService.getAuthenticationStatus().subscribe(authenticated => {
+      this.isAuthenticated = authenticated;
+      
+      // Si el usuario está autenticado, redirigir automáticamente al dashboard
+      if (this.isAuthenticated) {
+        this.router.navigate(['/dashboard']);
+      }
+    });
+  }
+  
+  logout(): void {
+    this.authService.logout();  // Llamamos al servicio de logout
+    this.isAuthenticated = false;  // Cambiamos el estado de autenticación a falso
+    window.location.reload();
+    this.router.navigate(['login']);  // Redirigimos al usuario a la página de login
+   // window.location.reload();  // Recarga la página  no deveria ser nesesaria esta linea angular deberia hacerlo automaicamente corregir
+  }
 }

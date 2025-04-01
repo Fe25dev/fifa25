@@ -20,14 +20,15 @@ import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), 
   ApiService,
-
+  AuthService,
   provideRouter([
       { path: 'reports', component: ReportsComponent },
       { path: 'users', component: UsersComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'settings', component: SettingsComponent },
       { path: 'login', component: LoginComponent },
-      { path: '', component: AppComponent },
+      { path: '', redirectTo: 'login', pathMatch: 'full' }, 
+      { path: '**', redirectTo: 'login' }  
     ]),
   provideHttpClient(),
   provideCharts(withDefaultRegisterables()),
