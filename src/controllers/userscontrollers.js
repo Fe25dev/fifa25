@@ -63,17 +63,43 @@ const updateUserById = async (req, res) => {
 };
 
 //**************************
+const userLoginValidations = [
+  body('email')
+    .isEmail().withMessage('El email no es válido.')
+    .notEmpty().withMessage('El email es obligatorio.'),
+  body('password')
+    .notEmpty().withMessage('La contraseña es obligatoria.')
+    .isLength({ min: 4 }).withMessage('La contraseña debe tener al menos 6 caracteres.')
+];
+
 const userLogin = async(req, res) => {
+  // Verificar si hay errores de validación
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
   const { email, password } = req.body;
+
+  try {
   const user = await User.findOne({ where: { user_email: email } });
 
   if (!user) {
-    return res.status(401).json({ message: 'Credenciales incorrectas' });
+    return res.status(401).json({ message: 'Credenciales incorrectas email no encontrado' });
   }
 
-  // Generar token JWT
-  const token = jwt.sign({ user_email: user.user_email }, 'your-secret-key', { expiresIn: '3h' });
-    res.json({ token });
+    if (user.user_password !== password) {
+      return res.status(401).json({ message: 'Credenciales password incorrecto' });
+    }
+
+    // Generar token JWT
+    const token = jwt.sign({ user_email: user.user_email }, 'your-secret-key', { expiresIn: '3h' });
+      res.json({ token });
+
+ } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error en el servidor' });
+  }  
 };
 
 // Middleware para verificar el token
@@ -98,6 +124,8 @@ function verifyToken(req, res, next) {
 
 module.exports = {
     userLogin,
+    userLoginValidations,
+    verifyToken,
     createUser,
     getAllUsers,
     getUserById,

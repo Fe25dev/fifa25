@@ -5,18 +5,17 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
 
 @Component({
-  
-  selector: 'app-reports',
-  //standalone: false,
+  selector: 'app-create-player',
   imports: [FormsModule,CommonModule],
-  templateUrl: './reports.component.html',
-  styleUrl: './reports.component.css'
+  templateUrl: './create-player.component.html',
+  styleUrl: './create-player.component.css'
 })
-export class ReportsComponent {
-  player = {
-    name: '',
+export class CreatePlayerComponent {
+player = {
+    long_name: '',
     age: null,
-    team: ''
+    club_name: '',
+    nationality_name:''
   };
   successMessage: string | null = null;
   errorMessage: string | null = null;
@@ -30,7 +29,7 @@ export class ReportsComponent {
         this.successMessage = 'Jugador creado con éxito';
         this.errorMessage = null;  // Limpiar mensaje de error si la creación fue exitosa
         // Limpiar el formulario después de la creación
-        this.player = { name: '', age: null, team: '' };
+        this.player = { long_name: '', age: null, club_name: '',nationality_name:'' };
       },
       (error) => {
         this.errorMessage = 'Hubo un error al crear el jugador';

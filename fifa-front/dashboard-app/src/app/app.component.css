@@ -2,78 +2,8 @@
 /* Estilo global: Body y fondo general */
 body {
   font-family: 'Arial', sans-serif;
-  margin: 60px  ;
-  padding: 0;
-  background-color: #fff6ff;  /* Color de fondo suave */
+  margin: 50px;
+  padding: 50px;
+  background-color: #6CE7F0;  /* Color de fondo suave */
   color: #333;  /* Color del texto */
-}
-
-/* Estilo para el contenedor principal */
-.container {
-
-  width: 80%;
-  margin: 20px auto;
-  padding-top: 60px; 
-  padding: 20px;
-  background-color: #ffffff;  /* Fondo blanco */
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra suave */
-
-}
-
-/* Encabezado del dashboard */
-h1 {
-  color: #007bff;  /* Azul */
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-h2 {
-  color: #00799f;  /* Azul */
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-}
-.player-chart-container {
-  display: grid;
-  grid-template-columns: 30% 70% ; 
-  grid-template-rows: auto; 
-  gap: 20px; 
-  height: 80vh; /* Altura basada en el 80% de la altura de la pantalla */
-  padding: 20px;
-  box-sizing: border-box;
-
-
-}
-
-.player-details {
-  padding: 20px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  overflow-y: auto; /* Si el contenido excede, habilita el desplazamiento */
-}
-
-
-.chart-container {
-  padding: 20px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  display: flex; /* Usamos Flexbox para centrar el contenido */
-  justify-content: center; /* Centra el gráfico horizontalmente */
-  align-items: center; /* Centra el gráfico verticalmente */
-  overflow-y: auto; 
-}
-
-
-/* Media Query para pantallas pequeñas */
-@media screen and (max-width: 768px) {
-  .player-chart-container {
-    grid-template-columns: 1fr; /* En pantallas pequeñas, los dos divs se colocan en una sola columna */
-    grid-template-rows: auto; /* Las filas se adaptan al contenido */
-  }
-
-  /* Opcional: Establecer altura dinámica en pantallas pequeñas */
-  .chart-container {
-    max-height: 300px; /* Ajusta la altura máxima del gráfico en pantallas pequeñas */
-    overflow-y: auto; /* Permite desplazamiento si el gráfico es más grande */
-  }
 }

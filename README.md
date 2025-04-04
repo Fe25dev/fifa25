@@ -19,5 +19,5 @@ ademas de poder analizar la informacion personal de cada uno
 El proyecto esta organizado en dos repositorio vinculados mediante submodulos en la estructura de git 
 para descargar el proyecto completamente debe ejecutarse el comando de manera recursiva:   
 
-git clone --recursive https://github.com/fifa-front.git
+git clone --recursive https://github.com/Fe24Le/fifa_Pro.git
 

@@ -1,11 +1,5 @@
 /* Estilo global: Body y fondo general */
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #fff6ff;  /* Color de fondo suave */
-  color: #333;  /* Color del texto */
-}
+
 
 /* Estilo para el contenedor principal */
 .container {

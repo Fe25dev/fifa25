@@ -5,18 +5,8 @@ body {
   margin: 0;
   padding: 0;
   background-color: #fff6ff;  /* Color de fondo suave */
-  color: #333;  /* Color del texto */
 }
 
-/* Estilo para el contenedor principal */
-.container {
-  width: 95%;
-  margin: 10px auto;/*revisar esta linea*/
-  padding: 10px;/*revisar esta linea*/
-  background-color: #ffffff;  /* Fondo blanco */
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra suave */
-}
 
 /* Encabezado del dashboard */
 h1 {
@@ -29,6 +19,24 @@ h2 {
   color: #00799f;  /* Azul */
   font-size: 1.5rem;
   margin-bottom: 20px;
+}
+/* Estilo para el contenedor  seach revisar nose visualiza */
+.searchId {
+  width: 95%;
+  margin: 10px auto;/*revisar esta linea*/
+  padding: 10px;/*revisar esta linea*/
+  background-color: #ffffff;  /* Fondo blanco */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+}
+/* Estilo para el contenedor principal */
+.container {
+  width: 95%;
+  margin: 10px auto;/*revisar esta linea*/
+  padding: 10px;/*revisar esta linea*/
+  background-color: #ffffff;  /* Fondo blanco */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra suave */
 }
 .player-chart-container {
   display: grid;

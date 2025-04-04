@@ -1,11 +1,18 @@
 
-
 /* Estilo para el contenedor de las secciones */
-.contenedor {
+
+.conteiner {
   display: flex;
   justify-content: space-between; /* Asegura que las secciones estén separadas */
   gap: 20px; /* Espacio entre las secciones */
   flex-wrap: wrap; /* Permite que las secciones se envuelvan si no caben en una fila */
+
+  width: 95%;
+  margin: 10px auto;/*revisar esta linea*/
+  padding: 10px;/*revisar esta linea*/
+  background-color: #ffffff;  /* Fondo blanco */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra suave */
 }
 
 /* Estilo para cada sección dentro del contenedor */

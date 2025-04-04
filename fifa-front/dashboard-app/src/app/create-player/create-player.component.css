@@ -1,13 +1,4 @@
-
 /* Estilo global: Body y fondo general */
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 50px;
-  padding: 50px;
-  background-color: #fff6ff;  /* Color de fondo suave */
-  color: #333;  /* Color del texto */
-
-}
 
 h1 {
   color: #007bff;  /* Azul */
@@ -20,17 +11,15 @@ h2 {
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
-
-
-
 /* Estilo para el contenedor de las secciones */
-.contenedor {
+.conteiner {
   display: flex;
   flex-direction: column;
   justify-content: center;   /* Asegura que las secciones estén separadas */
   align-items: center;   
   gap: 20px;   /* Espacio entre las secciones */
   flex-wrap: wrap;   /* Permite que las secciones se envuelvan si no caben en una fila */
+  
 }
 
 
@@ -43,6 +32,13 @@ h2 {
   flex-direction: column;
   flex-wrap: wrap;             /* Permite que los elementos se ajusten a la siguiente fila si no hay suficiente espacio */
   gap: 10px;                   /* Espacio entre los elementos */
+
+    width: 95%;
+  margin: 10px auto;/*revisar esta linea*/
+  padding: 10px;/*revisar esta linea*/
+  background-color: #ffffff;  /* Fondo blanco */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra suave */
 }
 
 
@@ -72,14 +68,10 @@ button {
 button:hover {
   background-color: #0056b3;
 }
-
-
 .error-message {
   color: red;
   font-size: 14px;
 } 
-
-
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   .contenedor {

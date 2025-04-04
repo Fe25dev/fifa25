@@ -6,14 +6,12 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-edit-player',
-  //standalone: false,
+  selector: 'app-update-play',
   imports: [ FormsModule,CommonModule],
-  templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.css']
+  templateUrl: './update-play.component.html',
+  styleUrl: './update-play.component.css'
 })
-
-export class SettingsComponent implements OnInit {
+export class UpdatePlayComponent implements OnInit {
 
   playerId: string = '';  // Almacena el ID ingresado por el usuario
   player: any = null;  // Almacena los datos del jugador
@@ -26,7 +24,7 @@ export class SettingsComponent implements OnInit {
     nationality: '',
     skills: []
   };
-
+  
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute,
